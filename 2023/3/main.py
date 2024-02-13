@@ -118,6 +118,20 @@ def part_2():
                 'indices': indices,
                 'row': i
             })
+            
+    for symbol in symbols:
+        symbol_total = []
+        
+        for number in numbers:
+            if number['row'] in [symbol['row'] - 1, symbol['row'], symbol['row'] + 1]:
+                indices = number['indices']
+                for idx in indices:
+                    if idx in [symbol['col'] - 1, symbol['col'], symbol['col'] + 1]:
+                        symbol_total.append(int(number['num']))
+                        break
+                    
+        if len(symbol_total) == 2:
+            total += symbol_total[0] * symbol_total[1]
     
     return total
 
