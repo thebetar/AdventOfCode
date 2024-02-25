@@ -1,8 +1,6 @@
 with open('input.txt') as f:
     input_data = f.readlines()
     
-output = open('output.txt', 'w')
-    
 input_dict = {}
 
 modus = ""
@@ -80,6 +78,7 @@ def part_1():
 
 def part_2():
     seed_ranges = []
+    result_list = []
     
     for idx in range(0, int(len(input_dict["seeds"]) / 2)):
         starting_seed = input_dict["seeds"][idx * 2]
@@ -116,48 +115,19 @@ def part_2():
         return results
 
     soil = get_from_list(seed_ranges, input_dict["seed-to-soil"])
-    print(len(soil))
-    print(soil)
     fertilizer = get_from_list(soil, input_dict["soil-to-fertilizer"])
-    print(len(fertilizer))
-    print(fertilizer)
-    # water = get_from_list(fertilizer, input_dict["fertilizer-to-water"])
-#     light = get_from_list(water, input_dict["water-to-light"])
-#     temperature = get_from_list(light, input_dict["light-to-temperature"])
-#     humidity = get_from_list(temperature, input_dict["temperature-to-humidity"])
-#     location = get_from_list(humidity, input_dict["humidity-to-location"])
-    
-#     for i in range(len(seed_ranges)):
-#         output.write(f"RANGE: {seed_ranges[i]}\n")
-#         output.write(f"soil: {soil[i]}\n")
-#         output.write(f"fertilizer: {fertilizer[i]}\n")
-#         output.write(f"water: {water[i]}\n")
-#         output.write(f"light: {light[i]}\n")
-#         output.write(f"temperature: {temperature[i]}\n")
-#         output.write(f"humidity: {humidity[i]}\n")
-#         output.write(f"location: {location[i]}\n\n")
-#         output.write("----------------\n\n")
+    water = get_from_list(fertilizer, input_dict["fertilizer-to-water"])
+    light = get_from_list(water, input_dict["water-to-light"])
+    temperature = get_from_list(light, input_dict["light-to-temperature"])
+    humidity = get_from_list(temperature, input_dict["temperature-to-humidity"])
+    location = get_from_list(humidity, input_dict["humidity-to-location"])
+
+    location_min = float('inf')
+
+    for loc in location:
+        location_min = min(loc[0], location_min)
         
-#         result_list.append({
-#             "seed": seed_ranges[i],
-#             "soil": soil[i],
-#             "fertilizer": fertilizer[i],
-#             "water": water[i],
-#             "light": light[i],
-#             "temperature": temperature[i],
-#             "humidity": humidity[i],
-#             "location": location[i]
-#         })
-
-#     seed_min = float('inf')
-#     location_min = float('inf')
-
-#     for result in result_list:
-#         seed_min = min(result['seed'][0], seed_min)
-#         location_min = min(result['location'][0], location_min)
-    
-#     print(f"RANGE: Minimum seed: {seed_min}")
-#     print(f"RANGE: Minimum location: {location_min}")
+    print(f"RANGE: Minimum location: {location_min}")
 
 part_1()
 part_2()

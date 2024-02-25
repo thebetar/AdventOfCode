@@ -59,7 +59,6 @@ function part_1() {
     
     const resultPart2 = calculate('a');
 
-
     return {
         part1: resultPart1,
         part2: resultPart2
