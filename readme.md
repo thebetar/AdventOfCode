@@ -8,7 +8,8 @@ This repository is my attempt to complete very advent of code challenge where ea
 | Javascript    | [ ]       |
 | Go            | [ ]       |
 | C             | [ ]       |
-| RLang         | [ ]       |
+| R             | [ ]       |
 | Lua           | [ ]       |
 | Java (kotlin) | [ ]       |
 | Rust          | [ ]       |
+| Assembly      | [ ]       |
