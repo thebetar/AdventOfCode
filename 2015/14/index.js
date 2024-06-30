@@ -47,24 +47,29 @@ reindeer.forEach(r => {
 	r.distance = 0;
 });
 
-let timeLeft = seconds;
+for (let i = 1; i <= seconds; i++) {
+	let maxDistance = 0;
 
-while (timeLeft > 0) {
 	reindeer.forEach(r => {
-		const iterTime = timeLeft % (r.time + r.restTime);
+		const { speed, time, restTime } = r;
 
-		if (iterTime <= r.time) {
-			r.distance += r.speed;
-		}
+		const cycleTime = time + restTime;
+		const cycleDistance = speed * time;
+
+		const cycleCount = Math.floor(i / cycleTime);
+		const cycleRemainder = i % cycleTime;
+
+		const distance = cycleCount * cycleDistance + Math.min(time, cycleRemainder) * speed;
+
+		r.distance = distance;
+		maxDistance = Math.max(maxDistance, distance);
 	});
 
-	const maxDistance = reindeer.reduce((acc, { distance }) => {
-		return Math.max(acc, distance);
-	}, 0);
-
-	reindeer.find(r => r.distance === maxDistance).points++;
-
-	timeLeft--;
+	reindeer.forEach(r => {
+		if (r.distance === maxDistance) {
+			r.points++;
+		}
+	});
 }
 
 const mostPoints = reindeer.reduce((acc, { points }) => {
