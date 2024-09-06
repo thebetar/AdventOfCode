@@ -28,3 +28,18 @@ for (let i = 0; i < combinations.length; i++) {
 }
 
 console.log(`Part 1: ${moleculePossiblities.size}`);
+
+// Part 2
+let search = molecule;
+let steps = 0;
+
+while (search !== 'e') {
+	for (const [from, to] of combinations) {
+		if (search.includes(to)) {
+			search = search.replace(to, from);
+			steps++;
+		}
+	}
+}
+
+console.log(`Part 2: ${steps}`);
