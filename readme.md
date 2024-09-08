@@ -5,7 +5,7 @@ This repository is my attempt to complete very advent of code challenge where ea
 | Language      | Completed |
 | ------------- | --------- |
 | Python        | [ ]       |
-| Javascript    | [ ]       |
+| Javascript    | [x]       |
 | Go            | [ ]       |
 | C             | [ ]       |
 | R             | [ ]       |
