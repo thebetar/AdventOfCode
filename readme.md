@@ -4,12 +4,12 @@ This repository is my attempt to complete very advent of code challenge where ea
 
 | Language      | Completed |
 | ------------- | --------- |
-| Python        | [ ]       |
-| Javascript    | [x]       |
-| Go            | [ ]       |
-| C             | [ ]       |
-| R             | [ ]       |
-| Lua           | [ ]       |
-| Java (kotlin) | [ ]       |
-| Rust          | [ ]       |
-| Assembly      | [ ]       |
+| Python        | ❌        |
+| Javascript    | ✅        |
+| Go            | ❌        |
+| C             | ❌        |
+| R             | ❌        |
+| Lua           | ❌        |
+| Java (kotlin) | ❌        |
+| Rust          | ❌        |
+| Assembly      | ❌        |
