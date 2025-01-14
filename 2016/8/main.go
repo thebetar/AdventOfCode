@@ -77,6 +77,11 @@ func main() {
 
 	fmt.Println("Part 1: ", count)
 
+	fmt.Println("-------------------------------------")
+
+	fmt.Println("Part 2: ")
+
+
 	// Print part 2 the pixel grid
 	for i := range matrix {
 		for j := range matrix[i] {
